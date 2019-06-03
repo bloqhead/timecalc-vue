@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "name": "timecalc",
+  "alias": "timecalc.bloq.io",
+  "builds": [
+    {
+      "src": "index.html",
+      "use": "@now/static"
+    }
+  ]
+}

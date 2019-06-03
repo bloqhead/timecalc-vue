@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Time to Decimal Calculator</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      *,
+      *::before,
+      *::after {
+        margin: 0;
+        box-sizing: border-box;
+      }
+      html {
+        font-size: 62.5%;
+      }
+      body {
+        font: normal 1.8rem/1.3 "Roboto Mono", monospace;
+        color: #333;
+        background: black;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        -webkit-font-smoothing: antialiased;
+        text-rendering: optimizeLegibility;
+        -moz-osx-font-smoothing: grayscale;
+      }
+      #app {
+        width: 100%;
+        max-width: 60rem;
+        margin: 0 auto;
+      }
+      form,
+      input {
+        font: inherit;
+      }
+      fieldset {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        grid-column-gap: 2rem;
+        grid-row-gap: 2rem;
+        border: 2px solid rgba(255, 255, 255, 0.15);
+        padding: 1rem 1.5rem 1.5rem 1.5rem;
+        margin: 0;
+        border-radius: 1rem;
+      }
+      legend {
+        margin: 0 auto;
+        padding: 0 2rem;
+        font-size: 1.4rem;
+        font-weight: 700;
+        text-transform: uppercase;
+      }
+      input[type="number"] {
+        display: block;
+        width: 100%;
+        border: 1px solid;
+        padding: 2rem;
+        border: 0;
+        background: rebeccapurple;
+        color: white;
+        border-radius: 1rem;
+        font-variant-numeric: tabular-nums;
+        transition: background 150ms ease, color 150ms ease,
+          box-shadow 150ms ease;
+        outline: 0;
+      }
+      input[type="number"]:focus {
+        background-color: seagreen;
+        color: black;
+        box-shadow: 0 0 1rem 0 seagreen;
+      }
+      #result {
+        grid-area: 2 / 1 / 3 / 3;
+        text-align: center;
+        font-size: 4rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <noscript>
+        <strong>
+          You must have JavaScript enabled for this app to work.
+        </strong>
+      </noscript>
+
+      <form @input="update">
+        <fieldset>
+          <legend>Time => Decimal</legend>
+          <input
+            v-model="hours"
+            ref="hours"
+            type="number"
+            placeholder="hours"
+            id="hours"
+            step="1"
+            autocomplete="off"
+            min="0"
+            max="999"
+          />
+          <input
+            v-model="minutes"
+            type="number"
+            placeholder="minutes"
+            id="minutes"
+            step="15"
+            autocomplete="off"
+            min="0"
+            max="999"
+          />
+          <input
+            v-model="result"
+            type="number"
+            placeholder="result"
+            id="result"
+            step="any"
+            autocomplete="off"
+          />
+        </fieldset>
+      </form>
+    </div>
+
+    <script src="https://unpkg.com/vue@2.6.10/dist/vue.min.js"></script>
+    <script src="/app.js"></script>
+  </body>
+</html>
