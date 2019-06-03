@@ -1,0 +1,7 @@
+{
+  "author": "Daryn St. Pierre",
+  "scripts": {
+    "dev": "now dev",
+    "deploy": "now"
+  }
+}
