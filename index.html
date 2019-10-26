@@ -9,20 +9,32 @@
       href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,700&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/css-micro-reset@1.0.0/micro-css-reset.css"
+    />
     <style>
+      :root {
+        --baseFont: normal 1.8rem/1.3 "Roboto Mono", monospace;
+        --baseColor: #333;
+        --baseBg: #000;
+      }
+
       *,
       *::before,
       *::after {
         margin: 0;
         box-sizing: border-box;
       }
+
       html {
         font-size: 62.5%;
       }
+
       body {
-        font: normal 1.8rem/1.3 "Roboto Mono", monospace;
-        color: #333;
-        background: black;
+        font: var(--baseFont);
+        color: var(--baseColor);
+        background: var(--baseBg);
         display: flex;
         align-items: center;
         justify-content: center;
@@ -31,15 +43,18 @@
         text-rendering: optimizeLegibility;
         -moz-osx-font-smoothing: grayscale;
       }
+
       #app {
         width: 100%;
         max-width: 60rem;
         margin: 0 auto;
       }
+
       form,
       input {
         font: inherit;
       }
+
       fieldset {
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -51,6 +66,7 @@
         margin: 0;
         border-radius: 1rem;
       }
+
       legend {
         margin: 0 auto;
         padding: 0 2rem;
@@ -58,11 +74,13 @@
         font-weight: 700;
         text-transform: uppercase;
       }
+
       input[type="number"] {
         display: block;
         width: 100%;
         border: 1px solid;
         padding: 2rem;
+        margin: 0 0 2rem 0;
         border: 0;
         background: rebeccapurple;
         color: white;
@@ -72,11 +90,13 @@
           box-shadow 150ms ease;
         outline: 0;
       }
+
       input[type="number"]:focus {
         background-color: seagreen;
         color: black;
         box-shadow: 0 0 1rem 0 seagreen;
       }
+
       #result {
         grid-area: 2 / 1 / 3 / 3;
         text-align: center;
@@ -127,8 +147,7 @@
         </fieldset>
       </form>
     </div>
-
-    <script src="https://unpkg.com/vue@2.6.10/dist/vue.min.js"></script>
+    <script src="//unpkg.com/vue@2.6.10/dist/vue.min.js"></script>
     <script>
       var app = new Vue({
         el: "#app",

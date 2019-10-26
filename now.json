@@ -1,7 +1,6 @@
 {
-  "version": 2,
   "name": "timecalc",
-  "alias": "timecalc.bloq.io",
+  "alias": "timecalc.daryn.codes",
   "builds": [
     {
       "src": "index.html",
